@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'base.css' %}"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} Título padrão {% endblock %}</title>
+    {% block style %} {% endblock %}
+</head>
+<body>
+    <header>
+        <div id="cabecalho-container">
+            <h1>Tarefas</h1>
+            <nav>
+                <a href="/tarefas">Tarefas</a>
+                <a href="/tarefas/adicionar">Adicionar</a>
+            </nav>
+        </div>
+    </header>
+    {% block corpo %}
+
+    {% endblock %}
+</body>
+</html>

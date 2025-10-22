@@ -3,10 +3,12 @@ from django.http import HttpResponse
 
 def home(request):
     frase = "Hello World!"
-    return HttpResponse(frase)
+    if request.method == "GET":
+        return render(request, 'tarefas/home.html')
 
 def add(request):
-    return HttpResponse("Adicionando uma nova tarefa ao sistema...")
+    if request.method == "GET":
+        return render(request, 'tarefas/adicionar.html')
 
 def remove(request):
     return HttpResponse("Removendo uma tarefa do sistema...")

@@ -1,0 +1,49 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    background: #2b2b2b;
+    background: linear-gradient(180deg, rgba(43, 43, 43, 1) 0%, rgba(20, 20, 20, 1) 100%);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    text-align: center;
+}
+
+h1, h2, h3, p, span, a {
+    color: white;
+}
+
+button {
+    border-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    padding:5px;
+}
+
+button:hover {
+    cursor: pointer;
+    animation: hoverButton 0.3s forwards;
+}
+
+@keyframes hoverButton {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+#cabecalho-container {
+    background-color: rgb(235, 235, 235);
+    padding: 10px;
+}
+
+#cabecalho-container * {
+    margin: 0;
+    color: black;
+}
