@@ -1,14 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .forms import TarefaForm
 
 def home(request):
-    frase = "Hello World!"
     if request.method == "GET":
         return render(request, 'tarefas/home.html')
 
 def add(request):
-    if request.method == "GET":
-        return render(request, 'tarefas/adicionar.html')
+    form = TarefaForm()
+
+    if request.method == "POST":
+        form = TarefaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
+    return render(request, 'tarefas/adicionar.html', {'form' : form})
 
 def remove(request):
     return HttpResponse("Removendo uma tarefa do sistema...")
