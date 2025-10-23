@@ -9,6 +9,22 @@
 
 {% block corpo %}
     <h1>Home</h1>
-    <p>Lorem Ipsum</p>
+    {% if tarefas %}
+
+        {% for tarefa in tarefas %}
+            <h3>
+                <a href="{% url 'individual' tarefa.id %}">{{ tarefa.titulo }}</a> - 
+                {% if tarefa.concluida %}
+                    Concluída
+                {% else %}
+                    Não concluída
+                {% endif %}
+            </h3>
+            <hr/>
+        {% endfor %}
+
+    {% else %}
+        <p>Não existe tarefas cadastradas...</p>
+    {% endif %}
 {% endblock %}
 

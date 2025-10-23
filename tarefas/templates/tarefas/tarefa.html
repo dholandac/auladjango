@@ -1,0 +1,17 @@
+{% extends 'tarefas/base.html' %}
+
+{% block titulo %}Tarefa - Detalhes{% endblock %}
+
+{% block style %} 
+    {% load static %}
+{% endblock %}
+
+{% block corpo %}
+    <h2>Detalhes da Tarefa</h2>
+
+    <h3>Título: {{tarefa.titulo}}</h3>
+    <h3>Descrição: {{tarefa.descricao}}</h3>
+    <h3>Concluído: {{tarefa.concluida}}</h3>
+    <h3>Criado em: {{tarefa.criada_em|date:'d/m/Y H:i'}}</h3>
+{% endblock %}
+

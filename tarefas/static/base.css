@@ -11,6 +11,7 @@ body {
     margin: 0;
     height: 100vh;
     text-align: center;
+    align-items: center;
 }
 
 h1, h2, h3, p, span, a {
