@@ -40,8 +40,9 @@ button:hover {
 }
 
 #cabecalho-container {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(209, 209, 209);
     padding: 10px;
+    border-bottom: 2px solid #555555;
 }
 
 #cabecalho-container * {

@@ -8,21 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>{% block titulo %} Título padrão {% endblock %}</title>
-    {% block style %} {% endblock %}
+    <title>Página não encontrada</title>
 </head>
 <body>
-    <header>
-        <div id="cabecalho-container">
-            <h1>Tarefas</h1>
-            <nav>
-                <a href="{% url 'home' %}">Tarefas</a>
-                <a href="{% url 'adicionar' %}">Adicionar</a>
-            </nav>
-        </div>
-    </header>
-    {% block corpo %}
-
-    {% endblock %}
+    <h1>ATENÇÃO</h1>
+    <h2>Página não encontrada!</h2>
+    <h3>Você entrou em uma página inexistente...</h3>
+    <a href="{% url 'home' %}">Voltar para home</a>
 </body>
 </html>

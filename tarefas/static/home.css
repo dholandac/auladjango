@@ -1,0 +1,40 @@
+body > h1 {
+    text-align: center;
+}
+
+.tarefa-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 600px;
+    transition: all 0.3s ease;
+}
+
+.tarefa-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tarefa-container h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.tarefa-container a {
+    text-decoration: none;
+    color: #4a9eff;
+    transition: color 0.3s ease;
+}
+
+.tarefa-container a:hover {
+    color: #6bb3ff;
+}
+
+.tarefa-container hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 15px;
+}

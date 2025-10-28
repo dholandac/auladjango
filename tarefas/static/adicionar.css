@@ -1,0 +1,114 @@
+form {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 500px;
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+form p {
+    text-align: left;
+    margin: 20px 0;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form input[type="date"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #4a9eff;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 8px rgba(74, 158, 255, 0.3);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form input[type="submit"] {
+    background-color: #dfdfdf;
+    color: rgb(49, 49, 49);
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+form input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.errorlist {
+    color: #ff6b6b;
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+    font-size: 0.9rem;
+}
+
+.errorlist li {
+    background-color: rgba(255, 107, 107, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+    border-left: 3px solid #ff6b6b;
+}
+
+form label::after {
+    content: "";
+}
+
+form .required label::after {
+    content: " *";
+    color: #ff6b6b;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}

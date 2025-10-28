@@ -12,15 +12,17 @@
     {% if tarefas %}
 
         {% for tarefa in tarefas %}
-            <h3>
-                <a href="{% url 'individual' tarefa.id %}">{{ tarefa.titulo }}</a> - 
-                {% if tarefa.concluida %}
-                    Concluída
-                {% else %}
-                    Não concluída
-                {% endif %}
-            </h3>
-            <hr/>
+            <div class="tarefa-container">
+                <h3>
+                    <a href="{% url 'individual' tarefa.id %}">{{ tarefa.titulo }}</a> - 
+                    {% if tarefa.concluida %}
+                        Concluída
+                    {% else %}
+                        Não concluída
+                    {% endif %}
+                </h3>
+                <hr/>
+            </div>
         {% endfor %}
 
     {% else %}
