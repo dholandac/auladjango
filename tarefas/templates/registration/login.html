@@ -1,0 +1,15 @@
+{% extends 'tarefas/base.html' %}
+
+{% block titulo %}Tarefa - Login{% endblock %}
+
+{% block style %} 
+    {% load static %}
+{% endblock %}
+
+{% block corpo %}
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Entrar</button>
+</form>
+{% endblock %}

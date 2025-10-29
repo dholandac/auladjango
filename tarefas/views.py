@@ -4,7 +4,10 @@ from .forms import TarefaForm
 from .models import Tarefa
 
 def home(request):
-    lista = Tarefa.objects.all()
+    lista = Tarefa.objects.select_related('usuario', 'usuario__perfil').prefetch_related('etiquetas').all()
+    for tarefa in lista:
+        tarefa.etiquetas_lista = list(tarefa.etiquetas.all())
+    
     if request.method == "GET":
         return render(request, 'tarefas/home.html', {'tarefas' : lista})
 

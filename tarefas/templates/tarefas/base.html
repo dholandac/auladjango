@@ -19,6 +19,17 @@
                 <a href="{% url 'home' %}">Tarefas</a>
                 <a href="{% url 'adicionar' %}">Adicionar</a>
             </nav>
+            <div>
+                {% if user.is_authenticated %}
+                    <p> Olá, {{user.username}} </p>
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Sair</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}">Entrar</a>
+                {% endif %}
+            </div>
         </div>
     </header>
     {% block corpo %}
