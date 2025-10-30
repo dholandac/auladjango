@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from .forms import TarefaForm
 from .models import Tarefa
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import Group
+from django.contrib.auth import login
 
 @login_required
 def home(request):
@@ -40,7 +42,15 @@ def tarefa(request, id):
 
 def register(request):
     if request.method == 'POST':
-        pass
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+
+            group = Group.objects.get(name="usuarios_normais")
+            user.groups.add(group)
+
+            login(request, user)
+            return redirect('home')
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form' : form})

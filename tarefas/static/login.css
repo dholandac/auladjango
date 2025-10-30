@@ -1,9 +1,11 @@
 body > h1 {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
-form {
+body > form,
+main form,
+.login-form {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -13,17 +15,23 @@ form {
     transition: all 0.3s ease;
 }
 
-form:hover {
+body > form:hover,
+main form:hover,
+.login-form:hover {
     background-color: rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-form p {
+body > form p,
+main form p,
+.login-form p {
     text-align: left;
     margin: 20px 0;
 }
 
-form label {
+body > form label,
+main form label,
+.login-form label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
@@ -31,8 +39,12 @@ form label {
     font-size: 1rem;
 }
 
-form input[type="text"],
-form input[type="password"] {
+body > form input[type="text"],
+body > form input[type="password"],
+main form input[type="text"],
+main form input[type="password"],
+.login-form input[type="text"],
+.login-form input[type="password"] {
     width: 100%;
     padding: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -45,14 +57,18 @@ form input[type="password"] {
     transition: all 0.3s ease;
 }
 
-form input:focus {
+body > form input:focus,
+main form input:focus,
+.login-form input:focus {
     outline: none;
     border-color: #4a9eff;
     background-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 8px rgba(74, 158, 255, 0.3);
 }
 
-form button[type="submit"] {
+body > form button[type="submit"],
+main form button[type="submit"],
+.login-form button[type="submit"] {
     background-color: #dfdfdf;
     color: rgb(49, 49, 49);
     border: none;
@@ -67,7 +83,9 @@ form button[type="submit"] {
     width: 100%;
 }
 
-form button[type="submit"]:hover {
+body > form button[type="submit"]:hover,
+main form button[type="submit"]:hover,
+.login-form button[type="submit"]:hover {
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     animation: hoverButtonLight 0.3s forwards;
@@ -82,7 +100,9 @@ form button[type="submit"]:hover {
     }
 }
 
-form button[type="submit"]:active {
+body > form button[type="submit"]:active,
+main form button[type="submit"]:active,
+.login-form button[type="submit"]:active {
     transform: scale(1);
     transition: transform 0.1s ease;
 }
