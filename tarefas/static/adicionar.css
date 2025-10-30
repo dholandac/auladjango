@@ -1,4 +1,4 @@
-form {
+.form-adicionar {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -8,17 +8,17 @@ form {
     transition: all 0.3s ease;
 }
 
-form:hover {
+.form-adicionar:hover {
     background-color: rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-form p {
+.form-adicionar p {
     text-align: left;
     margin: 20px 0;
 }
 
-form label {
+.form-adicionar label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
@@ -26,13 +26,13 @@ form label {
     font-size: 1rem;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form input[type="number"],
-form input[type="date"],
-form textarea,
-form select {
+.form-adicionar input[type="text"],
+.form-adicionar input[type="email"],
+.form-adicionar input[type="password"],
+.form-adicionar input[type="number"],
+.form-adicionar input[type="date"],
+.form-adicionar textarea,
+.form-adicionar select {
     width: 100%;
     padding: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -45,21 +45,21 @@ form select {
     transition: all 0.3s ease;
 }
 
-form input:focus,
-form textarea:focus,
-form select:focus {
+.form-adicionar input:focus,
+.form-adicionar textarea:focus,
+.form-adicionar select:focus {
     outline: none;
     border-color: #4a9eff;
     background-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 8px rgba(74, 158, 255, 0.3);
 }
 
-form textarea {
+.form-adicionar textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-form input[type="submit"] {
+.form-adicionar input[type="submit"] {
     background-color: #dfdfdf;
     color: rgb(49, 49, 49);
     border: none;
@@ -74,13 +74,13 @@ form input[type="submit"] {
     width: 100%;
 }
 
-form input[type="submit"]:hover {
+.form-adicionar input[type="submit"]:hover {
     background-color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-form input[type="submit"]:active {
+.form-adicionar input[type="submit"]:active {
     transform: translateY(0);
 }
 
@@ -100,11 +100,11 @@ form input[type="submit"]:active {
     border-left: 3px solid #ff6b6b;
 }
 
-form label::after {
+.form-adicionar label::after {
     content: "";
 }
 
-form .required label::after {
+.form-adicionar .required label::after {
     content: " *";
     color: #ff6b6b;
 }

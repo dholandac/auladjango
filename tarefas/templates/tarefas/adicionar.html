@@ -9,7 +9,7 @@
 
 {% block corpo %}
     <h1>Adicionar</h1>
-    <form method="POST">
+    <form method="POST" class="form-adicionar">
         {% csrf_token  %}
         {{ form.as_p }}
         <input type="submit" value="Cadastrar"/>
