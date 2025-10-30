@@ -4,12 +4,15 @@
 
 {% block style %} 
     {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
 {% endblock %}
 
 {% block corpo %}
-<form method="post" action="{% url 'login' %}">
+<h1>Login</h1>
+<form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Entrar</button>
 </form>
+<p>Ainda não tem conta?</p><a href="{% url 'register' %}">Cadastre-se aqui</a>
 {% endblock %}

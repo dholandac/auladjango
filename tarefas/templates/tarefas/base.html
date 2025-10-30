@@ -14,7 +14,7 @@
 <body>
     <header>
         <div id="cabecalho-container">
-            <h1>Tarefas</h1>
+            <h1>📝 Tarefas</h1>
             <nav>
                 <a href="{% url 'home' %}">Tarefas</a>
                 <a href="{% url 'adicionar' %}">Adicionar</a>
@@ -35,5 +35,16 @@
     {% block corpo %}
 
     {% endblock %}
+    
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            document.documentElement.style.setProperty('--mouse-x', x + '%');
+            document.documentElement.style.setProperty('--mouse-y', y + '%');
+            document.body.style.setProperty('--mouse-x', x + '%');
+            document.body.style.setProperty('--mouse-y', y + '%');
+        });
+    </script>
 </body>
 </html>

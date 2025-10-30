@@ -1,0 +1,18 @@
+{% extends 'tarefas/base.html' %}
+
+{% block titulo %}Tarefa - Cadastrar{% endblock %}
+
+{% block style %} 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+{% endblock %}
+
+{% block corpo %}
+<h1>Criar conta</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Cadastrar</button>
+</form>
+<p>Já tem uma conta?</p><a href="{% url 'login' %}">Faça login aqui</a>
+{% endblock %}

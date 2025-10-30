@@ -12,6 +12,6 @@ class EtiquetaAdmin(admin.ModelAdmin):
 admin.site.register(Etiqueta, EtiquetaAdmin)
 
 class PerfilAdmin (admin.ModelAdmin):
-    list_display = ['bio', 'tema']
+    list_display = ['usuario','bio', 'tema']
 
 admin.site.register(Perfil, PerfilAdmin)

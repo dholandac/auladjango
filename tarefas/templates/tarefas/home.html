@@ -29,7 +29,7 @@
                 <div>  </div>
 
                 {% for etiqueta in tarefa.etiquetas_lista %}
-                    <div style="display: inline-block; margin-top: 5px; margin-right: 5px; padding: 5px; border-radius:5px; background-color: {{ etiqueta.cor }};">Etiqueta: {{ etiqueta.nome }}</div>
+                    <div class="etiqueta" style="--etiqueta-cor: {{ etiqueta.cor }};">{{ etiqueta.nome }}</div>
                 {% endfor %}
             </div>
         {% endfor %}

@@ -1,24 +1,29 @@
-.form-adicionar {
+body > h1 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+form {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto;
+    padding: 30px;
+    margin: 30px auto;
     max-width: 400px;
     transition: all 0.3s ease;
 }
 
-.form-adicionar:hover {
+form:hover {
     background-color: rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.form-adicionar p {
+form p {
     text-align: left;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
-.form-adicionar label {
+form label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
@@ -26,13 +31,8 @@
     font-size: 1rem;
 }
 
-.form-adicionar input[type="text"],
-.form-adicionar input[type="email"],
-.form-adicionar input[type="password"],
-.form-adicionar input[type="number"],
-.form-adicionar input[type="date"],
-.form-adicionar textarea,
-.form-adicionar select {
+form input[type="text"],
+form input[type="password"] {
     width: 100%;
     padding: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -45,22 +45,14 @@
     transition: all 0.3s ease;
 }
 
-.form-adicionar input:focus,
-.form-adicionar textarea:focus,
-.form-adicionar select:focus {
+form input:focus {
     outline: none;
     border-color: #4a9eff;
     background-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 8px rgba(74, 158, 255, 0.3);
 }
 
-.form-adicionar textarea {
-    resize: vertical;
-    min-height: 60px;
-    max-height: 100px;
-}
-
-.form-adicionar input[type="submit"] {
+form button[type="submit"] {
     background-color: #dfdfdf;
     color: rgb(49, 49, 49);
     border: none;
@@ -75,14 +67,24 @@
     width: 100%;
 }
 
-.form-adicionar input[type="submit"]:hover {
+form button[type="submit"]:hover {
     background-color: #ffffff;
-    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    animation: hoverButtonLight 0.3s forwards;
 }
 
-.form-adicionar input[type="submit"]:active {
-    transform: translateY(0);
+@keyframes hoverButtonLight {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.02);
+    }
+}
+
+form button[type="submit"]:active {
+    transform: scale(1);
+    transition: transform 0.1s ease;
 }
 
 .errorlist {
@@ -99,17 +101,4 @@
     border-radius: 4px;
     margin-top: 5px;
     border-left: 3px solid #ff6b6b;
-}
-
-.form-adicionar label::after {
-    content: "";
-}
-
-.form-adicionar .required label::after {
-    content: " *";
-    color: #ff6b6b;
-}
-
-::placeholder {
-    color: rgba(255, 255, 255, 0.5);
 }
