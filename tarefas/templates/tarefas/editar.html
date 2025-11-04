@@ -1,0 +1,18 @@
+{% extends 'tarefas/base.html' %}
+
+{% block titulo %}Editar - Tarefas{% endblock %}
+
+{% block style %} 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adicionar.css' %}"> 
+{% endblock %}
+
+{% block corpo %}
+    <h1>Editar Tarefa</h1>
+    <form method="POST" class="form-adicionar">
+        {% csrf_token  %}
+        {{ form.as_p }}
+        <input type="submit" value="Salvar"/>
+        <a href="{% url 'individual' tarefa.id %}">Cancelar</a>
+    </form>
+{% endblock %}

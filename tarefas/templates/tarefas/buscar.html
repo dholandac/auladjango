@@ -1,0 +1,50 @@
+{% extends 'tarefas/base.html' %}
+
+{% block titulo %}Buscar - Tarefas{% endblock %}
+
+{% block style %} 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}"> 
+{% endblock %}
+
+{% block corpo %}
+    <h1>Buscar Tarefas</h1>
+    
+    <form method="GET" class="form-buscar" style="margin-bottom: 20px;">
+        <input type="text" name="q" placeholder="Buscar por título ou descrição..." value="{{ query }}" style="padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 4px;"/>
+        <input type="submit" value="Buscar" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;"/>
+    </form>
+
+    {% if query %}
+        <h2>Resultados para: "{{ query }}"</h2>
+        
+        {% if tarefas %}
+            {% for tarefa in tarefas %}
+                <div class="tarefa-container">
+                    <h3>
+                        <a href="{% url 'individual' tarefa.id %}">{{ tarefa.titulo }}</a> - 
+                        {% if tarefa.concluida %}
+                            Concluída
+                        {% else %}
+                            Não concluída
+                        {% endif %}
+                    </h3>
+                    <hr/>
+                    <div>
+                        <span>Autor: {{ tarefa.usuario.username }}</span></br>
+                        <span>Bio: {{ tarefa.usuario.perfil.bio }}</span>
+                    </div>
+                    <div>  </div>
+
+                    {% for etiqueta in tarefa.etiquetas_lista %}
+                        <div class="etiqueta" style="--etiqueta-cor: {{ etiqueta.cor }};">{{ etiqueta.nome }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Nenhuma tarefa encontrada com esse critério de busca.</p>
+        {% endif %}
+    {% else %}
+        <p>Digite algo no campo de busca para encontrar tarefas.</p>
+    {% endif %}
+{% endblock %}

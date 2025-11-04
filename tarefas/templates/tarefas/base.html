@@ -18,6 +18,7 @@
             <nav>
                 <a href="{% url 'home' %}">Tarefas</a>
                 <a href="{% url 'adicionar' %}">Adicionar</a>
+                <a href="{% url 'buscar' %}">Buscar</a>
             </nav>
             <div id="user-info">
                 {% if user.is_authenticated %}

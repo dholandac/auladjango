@@ -1,0 +1,20 @@
+{% extends 'tarefas/base.html' %}
+
+{% block titulo %}Remover - Tarefas{% endblock %}
+
+{% block style %} 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adicionar.css' %}"> 
+{% endblock %}
+
+{% block corpo %}
+    <h1>Remover Tarefa</h1>
+    <div class="form-adicionar">
+        <p>Tem certeza que deseja remover a tarefa: <strong>{{ tarefa.titulo }}</strong>?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Confirmar Remoção" style="background-color: #dc3545;"/>
+            <a href="{% url 'individual' tarefa.id %}">Cancelar</a>
+        </form>
+    </div>
+{% endblock %}

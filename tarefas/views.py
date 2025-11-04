@@ -55,11 +55,54 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form' : form})
 
-def remove(request):
-    return HttpResponse("Removendo uma tarefa do sistema...")
+@login_required
+@permission_required("tarefas.delete_tarefa")
+def remove(request, id):
+    tarefa = get_object_or_404(Tarefa, pk=id)
+    
+    if not request.user.has_perm("tarefas.can_view_all_tarefas"):
+        if tarefa.usuario != request.user:
+            return redirect('home')
+    
+    if request.method == "POST":
+        tarefa.delete()
+        return redirect('home')
+    
+    return render(request, 'tarefas/remover.html', {'tarefa': tarefa})
 
-def edit(request):
-    return HttpResponse("Editando uma tarefa do sistema...")
+@login_required
+@permission_required("tarefas.change_tarefa")
+def edit(request, id):
+    tarefa = get_object_or_404(Tarefa, pk=id)
+    
+    if not request.user.has_perm("tarefas.can_view_all_tarefas"):
+        if tarefa.usuario != request.user:
+            return redirect('home')
+    
+    if request.method == "POST":
+        form = TarefaForm(request.POST, instance=tarefa)
+        if form.is_valid():
+            form.save()
+            return redirect('individual', id=tarefa.id)
+    else:
+        form = TarefaForm(instance=tarefa)
+    
+    return render(request, 'tarefas/editar.html', {'form': form, 'tarefa': tarefa})
 
+@login_required
 def search(request):
-    return HttpResponse("Buscando uma tarefa do sistema...")
+    query = request.GET.get('q', '')
+    tarefas = Tarefa.objects.select_related('usuario', 'usuario__perfil').prefetch_related('etiquetas').all()
+    
+    if request.user.has_perm("tarefas.can_view_all_tarefas"):
+        tarefas = tarefas.all()
+    else:
+        tarefas = tarefas.filter(usuario=request.user)
+    
+    if query:
+        tarefas = tarefas.filter(titulo__icontains=query) | tarefas.filter(descricao__icontains=query)
+    
+    for tarefa in tarefas:
+        tarefa.etiquetas_lista = list(tarefa.etiquetas.all())
+    
+    return render(request, 'tarefas/buscar.html', {'tarefas': tarefas, 'query': query})

@@ -82,28 +82,36 @@ h3 strong {
 }
 
 .btn-editar {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #007bff;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn-editar:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #0056b3;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .btn-excluir {
-    background-color: rgba(255, 107, 107, 0.2);
-    color: #ff6b6b;
-    border: 1px solid #ff6b6b;
+    background-color: #ff6b6b;
+    color: white;
 }
 
 .btn-excluir:hover {
-    background-color: #ff6b6b;
-    color: white;
+    background-color: #ff5252;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.btn-remover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-remover:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .info-data {

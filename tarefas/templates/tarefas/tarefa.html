@@ -27,6 +27,12 @@
         <h3 class="info-data"><strong>Criado em:</strong> {{tarefa.criada_em|date:'d/m/Y H:i'}} (BRT)</h3>
         
         <div class="acoes-container">
+            {% if perms.tarefas.change_tarefa %}
+                <a href="{% url 'editar' tarefa.id %}" class="btn btn-editar">Editar</a>
+            {% endif %}
+            {% if perms.tarefas.delete_tarefa %}
+                <a href="{% url 'remover' tarefa.id %}" class="btn btn-remover">Remover</a>
+            {% endif %}
             <a href="{% url 'home' %}" class="btn btn-voltar">Voltar</a>
         </div>
     </div>
