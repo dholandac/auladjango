@@ -9,7 +9,7 @@ urlpatterns = [
     path('remover/<int:id>/', views.remove, name='remover'),
     path('editar/<int:id>/', views.edit, name='editar'),
     path('buscar/', views.search, name='buscar'),
-    path('login/', LoginView.as_view(), name='login'),
+    path('login/', LoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('register/', views.register, name='register')
 ]
